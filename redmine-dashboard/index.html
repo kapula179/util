@@ -1,13 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>redmine-dashboard</title>
+    <title>Redmine API Test</title>
+    <style>
+      body { font-family: sans-serif; padding: 20px; }
+      label { display: block; margin: 8px 0 4px; }
+      input { padding: 4px; width: 320px; max-width: 100%; }
+      button { margin-top: 8px; padding: 6px 12px; }
+      pre { background: #f5f5f5; padding: 10px; white-space: pre-wrap; }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <h1>Redmine API テスト</h1>
+
+    <p>自分の API キーを入力して、「取得」ボタンを押すと結果を表示します。</p>
+
+    <label for="api-key">Redmine API Key</label>
+    <input id="api-key" type="password" />
+
+    <button id="load">取得</button>
+
+    <hr />
+
+   <h2>チケット一覧</h2>
+<table id="issues-table" border="1" cellpadding="6">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>件名</th>
+      <th>状態</th>
+      <th>担当</th>
+      <th>更新日</th>
+    </tr>
+  </thead>
+  <tbody id="issues-body">
+    <!-- JSで行を追加する -->
+  </tbody>
+</table>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
